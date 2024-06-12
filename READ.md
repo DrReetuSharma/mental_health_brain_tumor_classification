@@ -23,6 +23,8 @@ This work is inspired by the advancements in AI-driven drug discovery and the co
 
 https://aspire10x.com/data-solutions/
 
+I used ResNet50 as pretrained model 
+
 ### Contact/correspondance:
 For any inquiries or feedback, please contact sharmar@aspire10x.com. https://aspire10x.com/data-solutions/
 
