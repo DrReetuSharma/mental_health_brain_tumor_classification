@@ -1,0 +1,20 @@
+# Function to display a list of images based on the given index
+def show_images(paths, label_paths, class_mappings, index_list=range(10), im_size=250, figsize=(12, 8)):
+    
+    num_images = len(index_list)
+    num_rows = (num_images + 3) // 4
+    index_to_class = {v: k for k, v in class_mappings.items()}
+    _, ax = plt.subplots(nrows=num_rows, ncols=4, figsize=figsize)
+    ax = ax.flatten()
+    
+    for i, index in enumerate(index_list):
+        if i >= num_images:
+            break
+        image = load_img(paths[index], target_size=(im_size, im_size), color_mode='grayscale')
+        ax[i].imshow(image, cmap='Greys_r')
+        class_name = index_to_class[label_paths[index]]
+        ax[i].set_title(f'{index}: {class_name}')
+        ax[i].axis('off')
+        
+    plt.tight_layout()
+    plt.show()
